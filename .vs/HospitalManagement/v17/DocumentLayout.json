@@ -1,0 +1,138 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\For Europe\\Projects\\HospitalManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E3B4A36A-192B-4820-8E09-4851C67FFD66}|HospitalManagement.API\\HospitalManagement.API.csproj|d:\\for europe\\projects\\hospitalmanagement\\hospitalmanagement.api\\controllers\\patientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3B4A36A-192B-4820-8E09-4851C67FFD66}|HospitalManagement.API\\HospitalManagement.API.csproj|solutionrelative:hospitalmanagement.api\\controllers\\patientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9CDA6E5-E9DA-49B2-95BF-475B292EE3F1}|HospitalManagement.Application\\HospitalManagement.Application.csproj|d:\\for europe\\projects\\hospitalmanagement\\hospitalmanagement.application\\services\\patientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9CDA6E5-E9DA-49B2-95BF-475B292EE3F1}|HospitalManagement.Application\\HospitalManagement.Application.csproj|solutionrelative:hospitalmanagement.application\\services\\patientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF666F41-2BB0-4011-B592-24DA11A2F834}|HospitalManagement.Infrastructure\\HospitalManagement.Infrastructure.csproj|d:\\for europe\\projects\\hospitalmanagement\\hospitalmanagement.infrastructure\\repositories\\patientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF666F41-2BB0-4011-B592-24DA11A2F834}|HospitalManagement.Infrastructure\\HospitalManagement.Infrastructure.csproj|solutionrelative:hospitalmanagement.infrastructure\\repositories\\patientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B575C8E7-BE4E-4EA3-91EB-C8E8F1642684}|HospitalManagement.Domain\\HospitalManagement.Domain.csproj|d:\\for europe\\projects\\hospitalmanagement\\hospitalmanagement.domain\\entities\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B575C8E7-BE4E-4EA3-91EB-C8E8F1642684}|HospitalManagement.Domain\\HospitalManagement.Domain.csproj|solutionrelative:hospitalmanagement.domain\\entities\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9CDA6E5-E9DA-49B2-95BF-475B292EE3F1}|HospitalManagement.Application\\HospitalManagement.Application.csproj|d:\\for europe\\projects\\hospitalmanagement\\hospitalmanagement.application\\interfaces\\ipatientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9CDA6E5-E9DA-49B2-95BF-475B292EE3F1}|HospitalManagement.Application\\HospitalManagement.Application.csproj|solutionrelative:hospitalmanagement.application\\interfaces\\ipatientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3B4A36A-192B-4820-8E09-4851C67FFD66}|HospitalManagement.API\\HospitalManagement.API.csproj|d:\\for europe\\projects\\hospitalmanagement\\hospitalmanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3B4A36A-192B-4820-8E09-4851C67FFD66}|HospitalManagement.API\\HospitalManagement.API.csproj|solutionrelative:hospitalmanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3B4A36A-192B-4820-8E09-4851C67FFD66}|HospitalManagement.API\\HospitalManagement.API.csproj|d:\\for europe\\projects\\hospitalmanagement\\hospitalmanagement.api\\hospitalmanagement.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{E3B4A36A-192B-4820-8E09-4851C67FFD66}|HospitalManagement.API\\HospitalManagement.API.csproj|solutionrelative:hospitalmanagement.api\\hospitalmanagement.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PatientsController.cs",
+              "DocumentMoniker": "D:\\For Europe\\Projects\\HospitalManagement\\HospitalManagement.API\\Controllers\\PatientsController.cs",
+              "RelativeDocumentMoniker": "HospitalManagement.API\\Controllers\\PatientsController.cs",
+              "ToolTip": "D:\\For Europe\\Projects\\HospitalManagement\\HospitalManagement.API\\Controllers\\PatientsController.cs",
+              "RelativeToolTip": "HospitalManagement.API\\Controllers\\PatientsController.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAmwCkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T20:13:20.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\For Europe\\Projects\\HospitalManagement\\HospitalManagement.API\\Program.cs",
+              "RelativeDocumentMoniker": "HospitalManagement.API\\Program.cs",
+              "ToolTip": "D:\\For Europe\\Projects\\HospitalManagement\\HospitalManagement.API\\Program.cs",
+              "RelativeToolTip": "HospitalManagement.API\\Program.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T20:03:28.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PatientRepository.cs",
+              "DocumentMoniker": "D:\\For Europe\\Projects\\HospitalManagement\\HospitalManagement.Infrastructure\\Repositories\\PatientRepository.cs",
+              "RelativeDocumentMoniker": "HospitalManagement.Infrastructure\\Repositories\\PatientRepository.cs",
+              "ToolTip": "D:\\For Europe\\Projects\\HospitalManagement\\HospitalManagement.Infrastructure\\Repositories\\PatientRepository.cs",
+              "RelativeToolTip": "HospitalManagement.Infrastructure\\Repositories\\PatientRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T19:05:27.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PatientService.cs",
+              "DocumentMoniker": "D:\\For Europe\\Projects\\HospitalManagement\\HospitalManagement.Application\\Services\\PatientService.cs",
+              "RelativeDocumentMoniker": "HospitalManagement.Application\\Services\\PatientService.cs",
+              "ToolTip": "D:\\For Europe\\Projects\\HospitalManagement\\HospitalManagement.Application\\Services\\PatientService.cs",
+              "RelativeToolTip": "HospitalManagement.Application\\Services\\PatientService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBEAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T19:39:26.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IPatientRepository.cs",
+              "DocumentMoniker": "D:\\For Europe\\Projects\\HospitalManagement\\HospitalManagement.Application\\Interfaces\\IPatientRepository.cs",
+              "RelativeDocumentMoniker": "HospitalManagement.Application\\Interfaces\\IPatientRepository.cs",
+              "ToolTip": "D:\\For Europe\\Projects\\HospitalManagement\\HospitalManagement.Application\\Interfaces\\IPatientRepository.cs",
+              "RelativeToolTip": "HospitalManagement.Application\\Interfaces\\IPatientRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T19:24:28.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "D:\\For Europe\\Projects\\HospitalManagement\\HospitalManagement.Domain\\Entities\\Patient.cs",
+              "RelativeDocumentMoniker": "HospitalManagement.Domain\\Entities\\Patient.cs",
+              "ToolTip": "D:\\For Europe\\Projects\\HospitalManagement\\HospitalManagement.Domain\\Entities\\Patient.cs",
+              "RelativeToolTip": "HospitalManagement.Domain\\Entities\\Patient.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAA0wA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T18:52:57.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HospitalManagement.API",
+              "DocumentMoniker": "D:\\For Europe\\Projects\\HospitalManagement\\HospitalManagement.API\\HospitalManagement.API.csproj",
+              "RelativeDocumentMoniker": "HospitalManagement.API\\HospitalManagement.API.csproj",
+              "ToolTip": "D:\\For Europe\\Projects\\HospitalManagement\\HospitalManagement.API\\HospitalManagement.API.csproj",
+              "RelativeToolTip": "HospitalManagement.API\\HospitalManagement.API.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-19T18:35:53.164Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

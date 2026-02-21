@@ -1,0 +1,15 @@
+D:\For Europe\Projects\HospitalManagement\HospitalManagement.Application\bin\Debug\net8.0\HospitalManagement.Application.deps.json
+D:\For Europe\Projects\HospitalManagement\HospitalManagement.Application\bin\Debug\net8.0\HospitalManagement.Application.dll
+D:\For Europe\Projects\HospitalManagement\HospitalManagement.Application\bin\Debug\net8.0\HospitalManagement.Application.pdb
+D:\For Europe\Projects\HospitalManagement\HospitalManagement.Application\bin\Debug\net8.0\HospitalManagement.Domain.dll
+D:\For Europe\Projects\HospitalManagement\HospitalManagement.Application\bin\Debug\net8.0\HospitalManagement.Domain.pdb
+D:\For Europe\Projects\HospitalManagement\HospitalManagement.Application\obj\Debug\net8.0\HospitalManagement.Application.csproj.AssemblyReference.cache
+D:\For Europe\Projects\HospitalManagement\HospitalManagement.Application\obj\Debug\net8.0\HospitalManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\For Europe\Projects\HospitalManagement\HospitalManagement.Application\obj\Debug\net8.0\HospitalManagement.Application.AssemblyInfoInputs.cache
+D:\For Europe\Projects\HospitalManagement\HospitalManagement.Application\obj\Debug\net8.0\HospitalManagement.Application.AssemblyInfo.cs
+D:\For Europe\Projects\HospitalManagement\HospitalManagement.Application\obj\Debug\net8.0\HospitalManagement.Application.csproj.CoreCompileInputs.cache
+D:\For Europe\Projects\HospitalManagement\HospitalManagement.Application\obj\Debug\net8.0\Hospital.86C33EBC.Up2Date
+D:\For Europe\Projects\HospitalManagement\HospitalManagement.Application\obj\Debug\net8.0\HospitalManagement.Application.dll
+D:\For Europe\Projects\HospitalManagement\HospitalManagement.Application\obj\Debug\net8.0\refint\HospitalManagement.Application.dll
+D:\For Europe\Projects\HospitalManagement\HospitalManagement.Application\obj\Debug\net8.0\HospitalManagement.Application.pdb
+D:\For Europe\Projects\HospitalManagement\HospitalManagement.Application\obj\Debug\net8.0\ref\HospitalManagement.Application.dll
