@@ -41,6 +41,7 @@ namespace HospitalManagement.Infrastructure.Repositories
                 existing.LastName = patient.LastName;
                 existing.Email = patient.Email;
                 existing.DateOfBirth = patient.DateOfBirth;
+                existing.Gender = patient.Gender;
                 
             }
             return Task.CompletedTask;
