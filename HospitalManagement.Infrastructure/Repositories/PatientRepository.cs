@@ -12,10 +12,10 @@ namespace HospitalManagement.Infrastructure.Repositories
     {
         private readonly List<Patient> _patients = new();
 
-        public Task<IEnumerable<Patient>> GetAllPatientsAsync()
+        public Task<IEnumerable<Patient>> GetAllAsync()
          => Task.FromResult(_patients.AsEnumerable());
 
-        public Task<Patient?> GetPatientByIdAsync(Guid id)        
+        public Task<Patient?> GetByIdAsync(Guid id)        
             => Task.FromResult(_patients.FirstOrDefault(p => p.Id == id));
         public Task AddAsync(Patient patient)
         {

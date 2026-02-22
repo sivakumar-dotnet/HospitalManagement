@@ -11,9 +11,9 @@ namespace HospitalManagement.Application.Services
             _patientRepository=patientRepository;
         }
         public async Task<IEnumerable<Patient>> GetAllPatientsAsync()
-            => await _patientRepository.GetAllPatientsAsync();
+            => await _patientRepository.GetAllAsync();
         public async Task<Patient> GetPatientByIdAsync(Guid id)
-            => await _patientRepository.GetPatientByIdAsync(id);
+            => await _patientRepository.GetByIdAsync(id);
         public async Task AddAsync (Patient patient)
             => await _patientRepository.AddAsync(patient);
         public async Task UpdateAsync  (Patient patient)
