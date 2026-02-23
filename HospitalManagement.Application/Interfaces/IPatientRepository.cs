@@ -2,13 +2,9 @@
 
 namespace HospitalManagement.Application.Interfaces
 {
-    public interface IPatientRepository
+    public interface IPatientRepository : IGenericRepository<Patient>
     {
-        Task<IEnumerable<Patient>> GetAllAsync();
-        Task<Patient> GetByIdAsync(Guid id);
-        Task AddAsync (Patient patient);
-        Task UpdateAsync (Patient patient);
-        Task DeleteAsync (Guid id);
+        Task<IEnumerable<Patient>> GetPatientsAboveAge(int age);
 
     }
 }

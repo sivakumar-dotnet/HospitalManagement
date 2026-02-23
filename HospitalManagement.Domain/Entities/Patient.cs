@@ -14,6 +14,7 @@ namespace HospitalManagement.Domain.Entities
         public string Email { get; set; }=string.Empty;
         [Required]
         public string Gender { get; set; }
+        public int Age { get; set; }   
 
     }
 }
