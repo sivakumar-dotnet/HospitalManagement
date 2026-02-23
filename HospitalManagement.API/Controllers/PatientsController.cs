@@ -1,4 +1,6 @@
-﻿using HospitalManagement.Application.Services;
+﻿using HospitalManagement.Application.DTOs;
+using HospitalManagement.Application.Interfaces;
+using HospitalManagement.Application.Services;
 using HospitalManagement.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,24 +11,24 @@ namespace HospitalManagement.API.Controllers
     [ApiController]
     public class PatientsController : ControllerBase
     {
-        private readonly PatientService _service;
+        private readonly PatientService _patientService;
 
         public PatientsController(PatientService service)
         {
-            _service = service;
+            _patientService = service;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var patients = await _service.GetAllPatientsAsync();
+            var patients = await _patientService.GetAllPatientsAsync();
             return Ok(patients);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            var patient = await _service.GetPatientByIdAsync(id);
+            var patient = await _patientService.GetPatientByIdAsync(id);
 
             if (patient == null)
                 return NotFound();
@@ -35,28 +37,19 @@ namespace HospitalManagement.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Patient patient)
+        public async Task<IActionResult> Create(CreatePatientDto patientDto)
         {
-            await _service.AddAsync(patient);
-            return CreatedAtAction(nameof(GetById), new { id = patient.Id }, patient);
+            await _patientService.AddPatientAsync(patientDto);
+            return Ok("Patient Created Successfully");
+                
+        }
+        [HttpGet("above-age/{age}")]
+        public async Task<IActionResult> GetAboveAge(int age)
+        {
+            var patients = await _patientService.GetPatientsAboveAgeAsync(age);
+            return Ok(patients);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
-        {
-            await _service.DeleteAsync(id);
-            return NoContent();
-        }
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, Patient patient)
-        {
-            if (id != patient.Id)
-            { 
-                return BadRequest("Id mismatch");
-            }
-            await _service.UpdateAsync(patient);
-            return NoContent();
-        }
 
     }
 }

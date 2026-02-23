@@ -1,4 +1,5 @@
 using HospitalManagement.Application.Interfaces;
+using HospitalManagement.Application.Mappings;
 using HospitalManagement.Application.Services;
 using HospitalManagement.Infrastructure.Data;
 using HospitalManagement.Infrastructure.Repositories;
@@ -14,6 +15,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options=> options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IPatientRepository, PatientRepository>();
 builder.Services.AddScoped<PatientService>();
+builder.Services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
+builder.Services.AddAutoMapper(typeof(PatientMappingProfile));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

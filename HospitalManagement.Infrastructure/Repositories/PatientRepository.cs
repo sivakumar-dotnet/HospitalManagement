@@ -1,50 +1,23 @@
 ﻿using HospitalManagement.Application.Interfaces;
 using HospitalManagement.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using HospitalManagement.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace HospitalManagement.Infrastructure.Repositories
 {
-    public class PatientRepository : IPatientRepository
+    public class PatientRepository : GenericRepository<Patient>, IPatientRepository
     {
         private readonly List<Patient> _patients = new();
 
-        public Task<IEnumerable<Patient>> GetAllAsync()
-         => Task.FromResult(_patients.AsEnumerable());
-
-        public Task<Patient?> GetByIdAsync(Guid id)        
-            => Task.FromResult(_patients.FirstOrDefault(p => p.Id == id));
-        public Task AddAsync(Patient patient)
+        public PatientRepository(ApplicationDbContext context)
+            : base(context)
         {
-            _patients.Add(patient);
-            return Task.CompletedTask;
         }
-        public Task DeleteAsync(Guid id)
+        public async Task<IEnumerable<Patient>> GetPatientsAboveAge(int age)
         {
-            var patient = _patients.FirstOrDefault(p => p.Id == id);
-            if (patient != null)
-            {
-                _patients.Remove(patient);
-            }
-            return Task.CompletedTask;
-        }
-
-        public Task UpdateAsync(Patient patient)
-        {
-            var existing= _patients.FirstOrDefault(p=> p.Id == patient.Id);
-            if(existing != null)
-            {
-                existing.FirstName = patient.FirstName;
-                existing.LastName = patient.LastName;
-                existing.Email = patient.Email;
-                existing.DateOfBirth = patient.DateOfBirth;
-                existing.Gender = patient.Gender;
-                
-            }
-            return Task.CompletedTask;
+            return await _context.Patients
+                                 .Where(p => p.Age > age)
+                                 .ToListAsync();
         }
     }
 }
