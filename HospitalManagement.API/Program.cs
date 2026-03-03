@@ -1,8 +1,14 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using HospitalManagement.API.Middleware;
+using HospitalManagement.API.Models;
 using HospitalManagement.Application.Interfaces;
 using HospitalManagement.Application.Mappings;
 using HospitalManagement.Application.Services;
+using HospitalManagement.Application.Validators;
 using HospitalManagement.Infrastructure.Data;
 using HospitalManagement.Infrastructure.Repositories;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +23,36 @@ builder.Services.AddScoped<IPatientRepository, PatientRepository>();
 builder.Services.AddScoped<PatientService>();
 builder.Services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
 builder.Services.AddAutoMapper(typeof(PatientMappingProfile));
+// Register validators
+builder.Services.AddValidatorsFromAssemblyContaining<CreatePatientDtoValidator>();
+
+// Enable automatic MVC validation
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+
+// When model validation fails, DON’T use the default response. Use MY custom response.
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.InvalidModelStateResponseFactory = context =>
+    {
+        var errors = context.ModelState
+            .Where(x => x.Value.Errors.Count > 0)
+            .SelectMany(x => x.Value.Errors.Select(e => new ValidationError
+            {
+                Field = x.Key,
+                Message = e.ErrorMessage
+            })).ToList();
+
+        var response = new ErrorResponse
+        {
+            StatusCode = 400,
+            Message = "Validation failed",
+            Errors = errors
+        };
+
+        return new BadRequestObjectResult(response);
+    };
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,7 +61,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseMiddleware<GlobalExceptionMiddleware>();
 app.UseHttpsRedirection();
 app.MapControllers();
 

@@ -26,7 +26,7 @@ namespace HospitalManagement.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(Guid id)
+        public async Task<IActionResult> GetPatientById(Guid id)
         {
             var patient = await _patientService.GetPatientByIdAsync(id);
 
@@ -39,9 +39,8 @@ namespace HospitalManagement.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreatePatientDto patientDto)
         {
-            await _patientService.AddPatientAsync(patientDto);
-            return Ok("Patient Created Successfully");
-                
+           var createdPatient= await _patientService.AddPatientAsync(patientDto);
+            return CreatedAtAction(nameof(GetPatientById), new { id = createdPatient.Id }, createdPatient);                           
         }
         [HttpGet("above-age/{age}")]
         public async Task<IActionResult> GetAboveAge(int age)

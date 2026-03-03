@@ -12,7 +12,7 @@ namespace HospitalManagement.Application.Interfaces
     {
         Task<IEnumerable<PatientResponseDto>> GetAllPatientsAsync();
         Task<PatientResponseDto?> GetPatientByIdAsync(Guid id);
-        Task AddPatientAsync(CreatePatientDto patientDto);
+        Task<PatientResponseDto> AddPatientAsync(CreatePatientDto patientDto);
         Task<IEnumerable<PatientResponseDto>> GetPatientsAboveAgeAsync(int age);
     }
 }

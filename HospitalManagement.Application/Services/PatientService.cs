@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HospitalManagement.Application.DTOs;
+using HospitalManagement.Application.Exceptions;
 using HospitalManagement.Application.Interfaces;
 using HospitalManagement.Domain.Entities;
 
@@ -14,13 +15,18 @@ namespace HospitalManagement.Application.Services
             _patientRepository = patientRepository;
             _mapper = mapper;
         }  
-        public async Task AddPatientAsync(Patient patient)
-        {
+        public async Task<PatientResponseDto> AddPatientAsync(CreatePatientDto patientDto)
+        {            
+            var patient = _mapper.Map<Patient>(patientDto);
             await _patientRepository.AddAsync(patient);
             await _patientRepository.SaveChangesAsync();
+            return _mapper.Map<PatientResponseDto>(patient);
         }
+              
+
         public async Task<IEnumerable<PatientResponseDto>> GetAllPatientsAsync()
         {
+            //throw new Exception("Test exception");//For testing exception
             var patients = await _patientRepository.GetAllAsync();
             return _mapper.Map<IEnumerable<PatientResponseDto>>(patients);
         }
@@ -28,17 +34,21 @@ namespace HospitalManagement.Application.Services
         public async Task<PatientResponseDto?> GetPatientByIdAsync(Guid id)
         {
            var patient= await _patientRepository.GetByIdAsync(id);
+            if(patient == null)
+            {
+                throw new NotFoundException($"Patient with Id {id} not found");
+            }
             return _mapper.Map<PatientResponseDto>(patient);
         }
 
-        public async Task AddPatientAsync(CreatePatientDto patientDto)
-        {
-            var patient = _mapper.Map<Patient>(patientDto);
-            patient.Id = Guid.NewGuid(); // since Guid PK
+        //public async Task AddPatientAsync(CreatePatientDto patientDto)
+        //{
+        //    var patient = _mapper.Map<Patient>(patientDto);
+        //    patient.Id = Guid.NewGuid(); // since Guid PK
 
-            await _patientRepository.AddAsync(patient);
-            await _patientRepository.SaveChangesAsync();
-        }
+        //    await _patientRepository.AddAsync(patient);
+        //    await _patientRepository.SaveChangesAsync();
+        //}
 
         public async Task<IEnumerable<PatientResponseDto>> GetPatientsAboveAgeAsync(int age)
         {
