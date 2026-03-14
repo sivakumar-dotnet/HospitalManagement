@@ -1,4 +1,5 @@
-﻿using HospitalManagement.Application.DTOs;
+﻿using HospitalManagement.Application.Common;
+using HospitalManagement.Application.DTOs;
 using HospitalManagement.Application.Interfaces;
 using HospitalManagement.Application.Services;
 using HospitalManagement.Domain.Entities;
@@ -19,9 +20,9 @@ namespace HospitalManagement.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] PatientQueryParameters queryParameters)
         {
-            var patients = await _patientService.GetAllPatientsAsync();
+            var patients = await _patientService.GetAllPatientsAsync(queryParameters);
             return Ok(patients);
         }
 

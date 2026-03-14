@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using HospitalManagement.Application.Common;
 using HospitalManagement.Application.DTOs;
 using HospitalManagement.Application.Exceptions;
 using HospitalManagement.Application.Interfaces;
 using HospitalManagement.Domain.Entities;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace HospitalManagement.Application.Services
 {
@@ -24,12 +26,30 @@ namespace HospitalManagement.Application.Services
         }
               
 
-        public async Task<IEnumerable<PatientResponseDto>> GetAllPatientsAsync()
+        public async Task<PagedResponse<PatientResponseDto>> GetAllPatientsAsync(PatientQueryParameters queryParameters)
         {
             //throw new Exception("Test exception");//For testing exception
             var patients = await _patientRepository.GetAllAsync();
-            return _mapper.Map<IEnumerable<PatientResponseDto>>(patients);
+            if (!string.IsNullOrEmpty(queryParameters.Gender))
+            {
+                patients = patients.Where(p => p.Gender == queryParameters.Gender);
+            }
+
+            var pagedPatients = patients
+                .Skip((queryParameters.PageNumber - 1) * queryParameters.PageSize)
+                .Take(queryParameters.PageSize);
+            var totalRecords= patients.Count();
+
+            var patientDtos= _mapper.Map<IEnumerable<PatientResponseDto>>(pagedPatients);
+            return new PagedResponse<PatientResponseDto>(
+                 queryParameters.PageNumber,
+                 totalRecords,
+                 queryParameters.PageSize,
+                 patientDtos
+                );  
+
         }
+
 
         public async Task<PatientResponseDto?> GetPatientByIdAsync(Guid id)
         {
